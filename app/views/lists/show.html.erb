@@ -1,0 +1,52 @@
+
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+  <a class="navbar-brand" href="#">
+    <img src="https://avatarfiles.alphacoders.com/186/thumb-186939.jpg" />
+</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="btn btn-ghost text-decoration-none"> <%= link_to "Add a bookmark", new_list_bookmark_path(@list) %></div>
+
+</div>
+
+
+
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://img.aws.la-croix.com/2017/12/01/1200896237/frequentation-salles-cinema-cesse-daugmenter-atteint-20112156-millions-dentrees_0_1399_933.jpg);">
+  <div class="container">
+    <h1><%= @list.name %></h1>
+    <p>Explore all the movies!</p>
+  </div>
+</div>
+
+
+<div class="container p-4 d-flex">
+  <% @list.bookmarks.each do |bookmark| %>
+
+    <li> <%= bookmark.comment %> </li>
+    <%= link_to bookmark_path(bookmark),
+    method: :delete,
+    data: { confirm: "Are you sure?" } do %>
+      <i class="fa fa-trash destroy_dose"></i>
+    <% end %>
+
+  <% end %>
+</div>
+
+<div class="footer">
+  <div class="footer-links">
+    <a href="#"><i class="fab fa-github"></i></a>
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-facebook"></i></a>
+    <a href="#"><i class="fab fa-twitter"></i></a>
+    <a href="#"><i class="fab fa-linkedin"></i></a>
+  </div>
+  <div class="footer-copyright">
+    This footer is made with <i class="fas fa-heart"></i> at Le Wagon
+  </div>
+</div>
+
+
+
+

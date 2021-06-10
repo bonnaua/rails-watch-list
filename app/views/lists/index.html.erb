@@ -1,0 +1,47 @@
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+  <a class="navbar-brand" href="#">
+    <img src="https://avatarfiles.alphacoders.com/186/thumb-186939.jpg" />
+</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="btn btn-ghost text-decoration-none"> <%= link_to "New List", new_list_path %></div>
+
+</div>
+
+
+
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://img.aws.la-croix.com/2017/12/01/1200896237/frequentation-salles-cinema-cesse-daugmenter-atteint-20112156-millions-dentrees_0_1399_933.jpg);">
+  <div class="container">
+    <h1>Your fucking <strong>list of movies</strong> !</h1>
+    <p>Create lists and store all your movies</p>
+  </div>
+</div>
+
+
+<div class="cards-list-container m-3">
+    <% @lists.each do |list| %>
+      <%= link_to list_path(list)  do%>
+        <div class = "d-flex justify-content-center">
+          <div class="cards card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://cdn.wallpapersafari.com/2/98/hbexfl.jpg)">
+            <h2> <%= list.name %> </h2>
+          </div>
+        </div>
+        <% end %>
+    <% end %>
+</div>
+
+<div class="footer">
+  <div class="footer-links">
+    <a href="#"><i class="fab fa-github"></i></a>
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-facebook"></i></a>
+    <a href="#"><i class="fab fa-twitter"></i></a>
+    <a href="#"><i class="fab fa-linkedin"></i></a>
+  </div>
+  <div class="footer-copyright">
+    This footer is made with <i class="fas fa-heart"></i> at Le Wagon
+  </div>
+</div>
+
